@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>再次邂逅 · 乐鱼体育</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+      background: #f5fbfa;
+      color: #1f2e2c;
+      line-height: 1.6;
+      padding: 0 1.25rem 4rem;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding-top: 1.5rem;
+    }
+
+    /* ---------- 色调与通用 ---------- */
+    .accent-green {
+      color: #1d7a6f;
+    }
+
+    .bg-soft-grid {
+      background-image:
+        linear-gradient(rgba(29, 122, 111, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(29, 122, 111, 0.04) 1px, transparent 1px);
+      background-size: 32px 32px;
+      background-position: center center;
+    }
+
+    /* hero */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 3.2rem 1.2rem 2.4rem;
+      border-radius: 32px;
+      background: linear-gradient(145deg, #e2f0ed 0%, #d4eae4 100%);
+      box-shadow: 0 8px 24px rgba(29, 122, 111, 0.08);
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 25% 40%, rgba(29, 122, 111, 0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-icon {
+      font-size: 2.8rem;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #144b44;
+      margin-bottom: 0.6rem;
+      position: relative;
+    }
+
+    .hero .subhead {
+      font-size: 1.1rem;
+      color: #2b5e55;
+      max-width: 520px;
+      margin: 0 auto 0.8rem;
+      font-weight: 400;
+    }
+
+    .hero .tagline {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(4px);
+      padding: 0.4rem 1.2rem;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      color: #1a554b;
+      border: 1px solid rgba(29, 122, 111, 0.2);
+      margin-top: 0.2rem;
+    }
+
+    /* 网格卡片（优势 & 说明混合区） */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (min-width: 650px) {
+      .grid-2col {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 1.8rem 1.6rem;
+      box-shadow: 0 6px 18px rgba(29, 122, 111, 0.06);
+      transition: box-shadow 0.15s ease, transform 0.1s ease;
+      border: 1px solid rgba(29, 122, 111, 0.08);
+    }
+
+    .card:hover {
+      box-shadow: 0 10px 28px rgba(29, 122, 111, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #144b44;
+      margin-bottom: 0.7rem;
+    }
+
+    .card h3 span {
+      background: #d7ede8;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #1d7a6f;
+    }
+
+    .card p {
+      color: #2d4b46;
+      font-size: 0.96rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .card .footnote {
+      font-size: 0.85rem;
+      color: #5f7d77;
+      margin-top: 0.6rem;
+      border-top: 1px dashed #d2e4df;
+      padding-top: 0.5rem;
+    }
+
+    /* 说明区域（单列宽卡片） */
+    .explain-block {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 2rem 1.8rem;
+      border: 1px solid rgba(29, 122, 111, 0.1);
+      margin-bottom: 2.8rem;
+      box-shadow: 0 4px 14px rgba(29, 122, 111, 0.04);
+    }
+
+    .explain-block h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #124a42;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .explain-block p {
+      margin-bottom: 0.9rem;
+      color: #2b504a;
+    }
+
+    .explain-block ul {
+      list-style: none;
+      padding-left: 0.2rem;
+      margin: 1rem 0 0.2rem;
+    }
+
+    .explain-block li {
+      padding: 0.3rem 0 0.3rem 1.8rem;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%231d7a6f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') left center no-repeat;
+      background-size: 1rem;
+      color: #2b504a;
+    }
+
+    /* FAQ 摘要 */
+    .faq-summary {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+      margin: 2.2rem 0 2.8rem;
+    }
+
+    @media (min-width: 600px) {
+      .faq-summary {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .faq-item {
+      background: #eef7f4;
+      border-radius: 20px;
+      padding: 1.2rem 1.4rem;
+      border-left: 4px solid #1d7a6f;
+    }
+
+    .faq-item .q {
+      font-weight: 600;
+      color: #124a42;
+      font-size: 0.98rem;
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+    }
+
+    .faq-item .q::before {
+      content: 'Q';
+      background: #1d7a6f;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 30px;
+      margin-right: 0.2rem;
+    }
+
+    .faq-item .a {
+      color: #2f5b54;
+      font-size: 0.91rem;
+      padding-left: 1.5rem;
+    }
+
+    /* 底部链接 & 导航信息 */
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem 1.6rem;
+      padding: 1.6rem 0 0.6rem;
+      border-top: 1px solid #cde0db;
+      margin-top: 1.6rem;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a {
+      color: #1d7a6f;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.1s;
+    }
+
+    .footer-links a:hover {
+      border-bottom-color: #1d7a6f;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #65837c;
+      margin-top: 1.6rem;
+      letter-spacing: 0.01em;
+    }
+
+    .inline-link {
+      color: #1d7a6f;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(29, 122, 111, 0.25);
+    }
+
+    .inline-link:hover {
+      border-bottom-color: #1d7a6f;
+    }
+
+    .btn-dummy {
+      display: inline-block;
+      background: #1d7a6f;
+      color: white;
+      font-weight: 500;
+      padding: 0.6rem 1.8rem;
+      border-radius: 60px;
+      font-size: 1rem;
+      border: none;
+      cursor: default;
+      pointer-events: none;
+      opacity: 0.8;
+      box-shadow: 0 4px 8px rgba(29, 122, 111, 0.2);
+      margin-top: 0.4rem;
+    }
+
+    /* 响应式微调 */
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .hero .subhead {
+        font-size: 1rem;
+      }
+      .card {
+        padding: 1.4rem 1.2rem;
+      }
+      .explain-block {
+        padding: 1.5rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page bg-soft-grid">
+
+  <!-- HERO 区 -->
+  <header class="hero">
+    <div class="hero-icon">🏷️</div>
+    <h1>再次遇见·乐鱼体育</h1>
+    <p class="subhead">熟悉的节奏，更新的视野 —— 每一次回访都带来更从容的体验。</p>
+    <div class="tagline">✦ 收藏 · 回看 · 持续关注</div>
+  </header>
+
+  <!-- 优势区 + 特点介绍 (网格卡片) -->
+  <div class="grid-2col">
+    <div class="card">
+      <h3><span>📌</span> 一键收藏，下次更快</h3>
+      <p>将 <a href="https://cnsport-le-yu.com.cn" class="inline-link">乐鱼体育</a> 加入浏览器书签或收藏夹，每次回来都能直接进入熟悉的内容环境，省去搜索步骤。</p>
+      <p class="footnote">习惯的入口，让浏览更自然。</p>
+    </div>
+
+    <div class="card">
+      <h3><span>🔄</span> 持续关注，内容流动</h3>
+      <p>体育资讯、赛事动态、社区讨论 —— 平台内容保持更新，常看常新。定期回访总能发现新的视角。</p>
+      <p class="footnote">不必每天守候，但值得偶尔驻足。</p>
+    </div>
+
+    <div class="card">
+      <h3><span>🎯</span> 轻量浏览，低负担</h3>
+      <p>页面结构简洁、加载迅速，无论在手机还是平板都能快速打开。没有过度推广，聚焦信息本身。</p>
+      <p class="footnote">流畅体验，为回访者而设计。</p>
+    </div>
+
+    <div class="card">
+      <h3><span>🧭</span> 导航清晰，不迷路</h3>
+      <p>分类入口直观，热门内容与专题分区明确。再次访问时，可以很快找到上次关注的板块。</p>
+      <p class="footnote">熟悉感 + 探索欲，两者兼顾。</p>
+    </div>
+  </div>
+
+  <!-- 说明区（为什么多次回访） -->
+  <div class="explain-block">
+    <h2>📖 关于「回访」这件事</h2>
+    <p>我们理解，很少有用户会只访问一个网站一次。大部分有价值的信息、有趣的讨论、持续的赛事跟踪，都需要多次浏览才能沉淀。正因如此，<a href="https://cnsport-le-yu.com.cn" class="inline-link">乐鱼体育</a> 在内容组织上会更注重延续性：热门话题保持在首页附近，赛事日历与专题回顾清晰陈列，方便你中断后再次接续。</p>
+    <ul>
+      <li><strong>断点续看</strong> —— 关键赛事模块保留周期，上次看到哪，这次接着翻。</li>
+      <li><strong>更新提示</strong> —— 首页区域会展示近期新增内容，无需从头翻找。</li>
+      <li><strong>收藏导向</strong> —— 将网站加入收藏夹，相当于拥有一个固定入口，不必依赖搜索或记忆。</li>
+    </ul>
+    <p style="margin-top: 0.8rem;">我们希望每次回访都像推开一扇熟悉的门——门内的布置偶有调整，但始终让人感到安稳。</p>
+  </div>
+
+  <!-- FAQ 摘要 (4条) -->
+  <div class="faq-summary">
+    <div class="faq-item">
+      <div class="q">如何快速再次找到这个网站？</div>
+      <div class="a">最直接的方式是添加书签/收藏夹。在浏览器地址栏右侧点击星形或书签图标即可。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">手机浏览器也能收藏吗？</div>
+      <div class="a">可以。iOS Safari 使用分享按钮→「添加到主屏幕」；安卓 Chrome 点击菜单→「添加到主屏幕」。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">内容更新频率如何？</div>
+      <div class="a">体育资讯和赛事专题保持日常更新，社区讨论随用户活跃度自然流动。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">是否需要注册才能浏览？</div>
+      <div class="a">大部分内容无需登录即可阅读。部分互动功能可能需注册，但浏览不受限。</div>
+    </div>
+  </div>
+
+  <!-- 底部链接区域 -->
+  <div class="footer-links">
+    <span>↗ 回到</span>
+    <a href="https://cnsport-le-yu.com.cn">乐鱼体育</a>
+    <span>·</span>
+    <a href="#">浏览帮助</a>
+    <a href="#">内容索引</a>
+    <a href="#">常见问题</a>
+  </div>
+
+  <div class="footer-note">
+    一个值得再次打开的站点 · 温和地关注，持续地相遇
+  </div>
+
+</div>
+
+</body>
+</html>
