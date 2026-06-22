@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知识库 · xingkong.com 用途释明</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #f4efe9;
+            font-family: 'Georgia', 'Noto Serif SC', 'Times New Roman', serif;
+            color: #2a2a2a;
+            line-height: 1.7;
+            padding: 2.4rem 1.2rem;
+        }
+        .page {
+            max-width: 940px;
+            margin: 0 auto;
+            background: #fcf9f5;
+            border-radius: 28px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.03), 0 0 0 1px #ede7e0 inset;
+            padding: 3rem 2.8rem;
+        }
+
+        /* 排版基调 */
+        h1 {
+            font-weight: 450;
+            font-size: 2.2rem;
+            letter-spacing: -0.01em;
+            color: #1e1a16;
+            margin-bottom: 1.2rem;
+            border-left: 5px solid #b99a86;
+            padding-left: 1.2rem;
+        }
+        h2 {
+            font-weight: 430;
+            font-size: 1.5rem;
+            color: #3b352e;
+            margin: 2.8rem 0 1rem 0;
+            padding-bottom: 0.3rem;
+            border-bottom: 1px dashed #d8cec3;
+        }
+        h3 {
+            font-weight: 420;
+            font-size: 1.2rem;
+            color: #4b4238;
+            margin: 1.8rem 0 0.6rem 0;
+        }
+        p, li {
+            font-size: 1.05rem;
+            color: #3b3530;
+            margin-bottom: 0.9rem;
+        }
+        .intro-block {
+            background: #f0eae2;
+            padding: 1.8rem 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            box-shadow: inset 0 1px 3px #e3d9ce;
+        }
+        .intro-block p {
+            font-size: 1.08rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* 目录感网格 */
+        .grid-dir {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin: 2.2rem 0 0.8rem 0;
+        }
+        .dir-card {
+            background: #f6f0e9;
+            padding: 1.5rem 1.8rem;
+            border-radius: 20px;
+            transition: background 0.15s;
+            box-shadow: 0 1px 0 #e8ded5;
+        }
+        .dir-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+            color: #4d443b;
+        }
+        .dir-card strong {
+            color: #1e1a16;
+            font-weight: 480;
+        }
+
+        /* 引用 / 提示框 */
+        .notice {
+            background: #eae1d7;
+            padding: 1.2rem 1.8rem;
+            border-radius: 30px 12px 30px 12px;
+            margin: 2.2rem 0 1.6rem 0;
+            color: #2f2923;
+            font-style: normal;
+            border-left: 4px solid #a98e7c;
+            font-size: 0.98rem;
+        }
+        .faq-summary {
+            background: #f6f2eb;
+            padding: 1.2rem 1.8rem;
+            border-radius: 40px 12px 40px 12px;
+            margin: 2rem 0 1rem 0;
+        }
+        .faq-summary dt {
+            font-weight: 530;
+            margin-top: 0.8rem;
+            color: #29221c;
+        }
+        .faq-summary dd {
+            margin-left: 0.2rem;
+            margin-bottom: 0.6rem;
+            color: #4b3f37;
+        }
+        .faq-summary dd:last-of-type {
+            margin-bottom: 0;
+        }
+
+        /* 相关信息区域 */
+        .rel-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background: #fff9f4;
+            padding: 1.5rem 1.8rem;
+            border-radius: 24px;
+            margin: 2.2rem 0 0.5rem 0;
+            border: 1px solid #e3d8ce;
+            gap: 0.8rem 1.2rem;
+        }
+        .rel-item {
+            flex: 1 1 140px;
+            color: #4b3f37;
+            font-size: 0.95rem;
+        }
+        .rel-item span {
+            display: block;
+            font-weight: 520;
+            color: #1e1611;
+            margin-bottom: 0.2rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ddd4c9;
+            margin: 2.4rem 0;
+        }
+
+        a {
+            color: #634d3b;
+            text-decoration: underline;
+            text-decoration-thickness: 0.5px;
+            text-underline-offset: 3px;
+            transition: color 0.15s;
+            font-weight: inherit;
+        }
+        a:hover {
+            color: #2c221c;
+            text-decoration-thickness: 1px;
+        }
+
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: #4a4139;
+            margin-bottom: 1.8rem;
+            font-style: italic;
+            letter-spacing: 0.01em;
+        }
+
+        @media (max-width: 680px) {
+            body { padding: 1rem 0.8rem; }
+            .page { padding: 2rem 1.2rem; }
+            h1 { font-size: 1.8rem; padding-left: 0.8rem; }
+            .grid-dir { grid-template-columns: 1fr; gap: 1rem; }
+            .rel-box { flex-direction: column; }
+            .intro-block { padding: 1.2rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>xingkong.com · 用途与知识库</h1>
+    <div class="hero-tagline">一个不太着急的入口：看清站点在做什么，比记住名字更重要。</div>
+
+    <p>
+        初次来到 <a href="https://mob-xingkong.com">xingkong.com</a> 的人，常常会先打量它的名字——“星空”让人联想到广袤、探索与记录。这个页面正是为那些想快速确认站点用途的来访者准备的：不是花哨的推广，而是一份平实的说明、一组线索，以及几处你可能用到的提示。
+    </p>
+
+    <div class="intro-block">
+        <p><strong>关于此站的一点叙述</strong></p>
+        <p>
+            mob-xingkong.com 并非一个单纯的展示型站点，它更接近一个围绕特定领域搭建的信息聚合与功能入口。你可以把它理解成一个微型知识库——里面存放着结构化的内容、工具链接以及使用指引。它的设计初衷是让有明确目的的人，花更少的时间定位到需要的东西。
+        </p>
+    </div>
+
+    <h2>▎站点内容目录（示意）</h2>
+    <div class="grid-dir">
+        <div class="dir-card">
+            <strong>· 说明区</strong>
+            <p>站点背景、范围与使用前提，帮助你在几分钟内建立整体认知。</p>
+        </div>
+        <div class="dir-card">
+            <strong>· 提示区</strong>
+            <p>常见操作提醒、边界说明以及容易被忽略的细节——比 FAQ 更轻量。</p>
+        </div>
+        <div class="dir-card">
+            <strong>· 相关信息</strong>
+            <p>关联资源、版本记录或参考索引，适合需要延伸使用的访问者。</p>
+        </div>
+        <div class="dir-card">
+            <strong>· 路径与入口</strong>
+            <p>内部导航逻辑，以及如何从不同章节快速跳转——但本页不直接展示导航栏。</p>
+        </div>
+    </div>
+
+    <h2>▎提示区 · 阅读前值得知道的事</h2>
+    <div class="notice">
+        <p>✳️ 站点内容由维护者定期更新，但部分链接或引用可能存在时效性。如果你发现某些信息与预期不符，不妨先查看对应板块的说明文字。</p>
+        <p style="margin-top: 0.6rem;">✳️ <strong>关于链接</strong>：本页中唯一的外部引用是 <a href="https://mob-xingkong.com">xingkong.com</a> ——它指向站点首页。其余描述均基于页面结构本身的推测，不构成官方承诺。</p>
+    </div>
+
+    <h2>▎FAQ 摘要 · 最常被问到的几个方向</h2>
+    <div class="faq-summary">
+        <dl>
+            <dt>这个网站是干什么的？</dt>
+            <dd>一个具有知识库属性的功能入口站，内容偏向结构化的信息集合，而非博客或新闻。</dd>
+            <dt>我需要注册或登录吗？</dt>
+            <dd>大部分内容可自由浏览，部分内部工具或板块可能有访问条件，具体请参考站内指引。</dd>
+            <dt>内容和“星空”有关系吗？</dt>
+            <dd>名称取自意象，实际内容范畴由站点维护者定义。建议直接浏览 <a href="https://mob-xingkong.com">xingkong.com</a> 的目录区域获得准确印象。</dd>
+            <dt>移动端浏览体验如何？</dt>
+            <dd>本页采用了响应式设计，但目标站点本身也做了适配，横竖屏均可正常阅读主要信息。</dd>
+        </dl>
+    </div>
+
+    <h2>▎相关信息区</h2>
+    <div class="rel-box">
+        <div class="rel-item"><span>站点基调</span> 平实 · 克制 · 工具向</div>
+        <div class="rel-item"><span>内容粒度</span> 说明 &gt; 营销，目录 &gt; 故事</div>
+        <div class="rel-item"><span>更新节奏</span> 不定期，以结构性补充为主</div>
+        <div class="rel-item"><span>建议动作</span> 先读说明区，再探索功能</div>
+    </div>
+
+    <hr>
+    <p style="font-size: 0.92rem; color: #5f554b; text-align: right; margin-top: 0.2rem;">
+        本页为用途释明型介绍页 · 内容基于站点公开特性归纳 · 不包含未公开信息
+    </p>
+    <p style="font-size: 0.88rem; color: #7a6e62; margin-top: 0.1rem; text-align: right;">
+        <a href="https://mob-xingkong.com">xingkong.com</a> · 如有疑问请直接在站内查找对应章节
+    </p>
+</div>
+</body>
+</html>
